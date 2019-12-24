@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Random Reddit Images</title>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script src="index.js"></script>
+
+	<link href="index.css" rel="stylesheet">
+
+</head>
+
+<body onload='morePictures();' style="background: #121211">
+
+	<div id="big-image" onclick="HideFullPageImage();">
+
+		<div id="big-picture-container"></div>
+
+	</div>
+
+	<div id="about" onclick="CloseAbout();">
+
+		<div id="about-text-container">
+
+			<div>Made by Nick and Stephen<br>All property is copyright of its respective owners<br>Please don't sue me</div>
+
+		</div>
+
+	</div>
+
+	<div id="top-bar">
+
+		<div id="more-button" onclick='morePictures();' title="duh">more</div>
+
+		<div id="refresh-button"  onclick="location.reload();" title="or you could just press F5, y'know">reload</div>
+
+		<div id="about-button" onclick="OpenAbout();" title="please">about</div>
+
+		<i id="settings-button" class="fa fa-cog" onclick="if(document.getElementById('settings-popup').style.top == '-15px'){document.getElementById('settings-popup').style.top = '39px'}else{document.getElementById('settings-popup').style.top = '-15px'};
+
+			if(this.style.background == 'rgb(31, 31, 31)'){this.style.background = ''; this.style.boxShadow = '';}else{this.style.background = '#1F1F1F'; this.style.boxShadow = '1px 0px 1px #121212 inset';};"></i>
+
+	</div>
+
+	<div id="settings-popup" style="top: -15px;">
+
+		<div id="image-loader-input">
+
+			images to load:
+
+			<input id="input" type="text" value="50" size="4" onchange="document.cookie='images='+this.value;" onkeyup="this.onchange();"></input>
+
+		</div>
+
+	</div>
+
+	<div id="container" style=""></div>
+
+	<div>
+
+		<div id="moreButton" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; text-align: center; bottom: 0px; right: 0px; position: fixed;" onclick='morePictures();'><a>more</a></div>
+
+	</div>
+
+</body>
+
+</html>
