@@ -5,17 +5,33 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Random Reddit Images</title>
 
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
+	<!-- fontawesome -->
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-	<script src="index.js"></script>
-
-	<link href="index.css" rel="stylesheet">
+	<!-- my css -->
+	<link href="css/index.css" rel="stylesheet">
 
 </head>
 
-<body onload='morePictures();' style="background: #121211">
+<body  style="background: #121211">
+
+
+	<div id="warning-popup">
+
+			<div id="warning">
+
+				<h1><u>WARNING: please procede at your own risk!</u></h1>
+
+				<h3>This site is randomly generated with pictures found on the internet.<br> Anything you can imagine can be here.</h3>
+				<br>
+				<h3>Seriously... don't view this site at work.</h3>
+				<br>
+
+				<div id="continue_button" onclick="hideWarning(); morePictures();"><i>click here to continue to site...</i></div>
+
+			</div>
+
+	</div>
 
 	<div id="big-image" onclick="HideFullPageImage();">
 
@@ -66,6 +82,13 @@
 		<div id="moreButton" style="padding-left: 10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px; text-align: center; bottom: 0px; right: 0px; position: fixed;" onclick='morePictures();'><a>more</a></div>
 
 	</div>
+
+
+	<!-- jQuery -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+
+	<!-- my js -->
+	<script src="js/index.js"></script>
 
 </body>
 

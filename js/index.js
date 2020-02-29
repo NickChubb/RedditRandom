@@ -4,6 +4,7 @@ $(window).unload(function() {
 
 });
 
+//populates input with current cookie
 window.onload = function(){
 
   if(getImagesCookie()!=''){
@@ -18,12 +19,15 @@ window.onload = function(){
 
 }
 
+//Auto-scroll upon reaching end of page
 window.onscroll = function(ev) {
   if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
     morePictures();
   }
 };
 
+
+//creates randomly generated string for URLs
 String.prototype.shuffleSlice = function () {
 
   var a = this.split(""),
@@ -49,7 +53,7 @@ String.prototype.shuffleSlice = function () {
 }
 
 
-
+//Load more images
 function morePictures(){
 
   var imageCount;
@@ -68,7 +72,7 @@ function morePictures(){
 
     var picture = str.shuffleSlice();
 
-    var picturelink = "http://i.imgur.com/" + picture + ".jpg";
+    var picturelink = "http://i.imgur.com/" + picture + ".png";
 
     document.getElementById('container').innerHTML += '<img onclick="ShowFullPageImage(this);" onload="if(this.width==\'161\'&&this.height==\'81\'){ this.parentNode.removeChild(this)};" id="'+picture+'" src="http://i.imgur.com/' + picture + '.jpg" title="'+(timesRan+1)+'.'+(i+1)+' : '+picture+'" class="thumbnail-image">';
 
@@ -79,7 +83,7 @@ function morePictures(){
 };
 
 
-
+//display full-size image
 function ShowFullPageImage(picture){
 
   document.getElementById('big-image').style.display = '-webkit-box';
@@ -89,7 +93,7 @@ function ShowFullPageImage(picture){
 };
 
 
-
+//hide full size image
 function HideFullPageImage(){
 
   document.getElementById('big-image').style.display = 'none';
@@ -99,7 +103,7 @@ function HideFullPageImage(){
 };
 
 
-
+//Displays the about popup
 function OpenAbout(){
 
   document.getElementById('about').style.display = '-webkit-box';
@@ -107,7 +111,7 @@ function OpenAbout(){
 };
 
 
-
+//Hides the about popup
 function CloseAbout(){
 
   document.getElementById('about').style.display = 'none';
@@ -115,7 +119,16 @@ function CloseAbout(){
 };
 
 
+//Hides the warning popup
+function hideWarning(){
 
+  document.getElementById('warning-popup').style.display = 'none';
+
+
+};
+
+
+//gets cookie which says how many images to load
 function getImagesCookie() {
 
   if(document.cookie!=""){
@@ -132,6 +145,7 @@ function getImagesCookie() {
 
 
 
+//popup settings panel
 $(function() {
 
   $(document).on('click', function(e) {
